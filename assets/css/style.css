@@ -1,6 +1,11 @@
 .gifDiv {
     display: inline-block;
-    padding: 20px;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+}
+
+.rating {
+    margin-bottom: 20px;
 }
 
 .gifContainer {
@@ -12,6 +17,7 @@
     min-height: 100px;
     height: 100%;
     position: fixed;
+    background: blue;
 }
 
 body {
@@ -21,4 +27,20 @@ body {
 
 .aside {
     float: right;
+    margin-right: 20px;
+    padding: 20px;
+}
+
+.listBtn {
+    margin: 10px 5px;
+}
+
+.nav {
+    padding-left: 5px;
+    background: red;
+}
+
+.gifTitle {
+    text-align: center;
+    font-size: 30px;
 }
