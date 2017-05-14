@@ -1,0 +1,24 @@
+.gifDiv {
+    display: inline-block;
+    padding: 20px;
+}
+
+.gifContainer {
+    display: inline-block;
+    float: left;
+    width: 70%;
+    min-width: 70%;
+    overflow-y: scroll;
+    min-height: 100px;
+    height: 100%;
+    position: fixed;
+}
+
+body {
+    background: yellow;
+    overflow: hidden;
+}
+
+.aside {
+    float: right;
+}

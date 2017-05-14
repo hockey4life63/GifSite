@@ -15,6 +15,7 @@ let gifObj = {
                 console.log(response.data[i])
                 gifObj.buildGifs(response.data[i]);
             }
+            gifObj.addGifLisnter();
         })
 
     },
@@ -27,7 +28,7 @@ let gifObj = {
             item.attr("data-search", this.topics[i]);
             $(".nav").append(item);
         }
-        this.addEventListner();
+        this.addBtnListner();
     },
     buildGifs: function(gif) {
         let item = $("<div>");
@@ -41,21 +42,33 @@ let gifObj = {
         img.attr("data-animated", gif.images.fixed_height.url);
         img.attr("state", "still");
         img.attr("src", gif.images.fixed_height_still.url);
-        item.append(rating);
         item.append(img);
+        item.append(rating);
         $(".gifContainer").append(item);
-
-
     },
     addButton: function(name) {
         this.topics.push(name);
         this.buildButtons();
     },
-    addEventListner: function() {
+    addBtnListner: function() {
         $(".listBtn").on("click", function() {
             gifObj.apiCall($(this).attr("data-search"));
         });
+    },
+    addGifLisnter: function() {
+        $(".gifDisplay").on("click", function() {
+            let img = $(this);
+            let state = img.attr("state");
+            if (state === "still") {
+                img.attr("state", "animated");
+                img.attr("src", img.attr("data-animated"));
+            } else {
+                img.attr("state", "still");
+                img.attr("src", img.attr("data-still"));
+            }
+        })
     }
+
 }
 gifObj.buildButtons();
 
